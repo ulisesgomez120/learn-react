@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import classes from "./App.css";
 import Person from "./Person/Person";
 
 const App = props => {
@@ -56,6 +56,7 @@ const App = props => {
   };
 
   let persons = null;
+  let btnClass = "";
 
   if (showPersonState.showPerson) {
     persons = (
@@ -73,11 +74,14 @@ const App = props => {
         })}
       </div>
     );
+    btnClass = classes.Red;
   }
   return (
-    <div className="App">
+    <div className={classes.App}>
       <h1>Hello!</h1>
-      <button onClick={() => togglePersonHandler()}>Change name</button>
+      <button className={btnClass} onClick={() => togglePersonHandler()}>
+        Change name
+      </button>
       {persons}
     </div>
   );

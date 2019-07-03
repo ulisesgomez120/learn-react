@@ -1,8 +1,8 @@
 import React from "react";
-import "./Person.css";
+import cards from "./Person.css";
 const person = props => {
   return (
-    <div className="Person">
+    <div className={cards.Person}>
       <p onClick={props.click}>
         I'm {props.name} and {props.age} years old!
       </p>
