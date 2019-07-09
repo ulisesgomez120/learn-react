@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./App.css";
-import Person from "../components/People/Person/Person";
+import People from "../components/People/People";
 
 const App = props => {
   // state = {
@@ -61,21 +61,16 @@ const App = props => {
   if (showPersonState.showPerson) {
     persons = (
       <div>
-        {personsState.persons.map((person, index) => {
-          return (
-            <Person
-              key={person.id}
-              name={person.name}
-              age={person.age}
-              click={() => deletePersonHandler(index)}
-              change={event => nameChangeHandler(event, person.id)}
-            />
-          );
-        })}
+        <People
+          people={personsState.persons}
+          clicked={deletePersonHandler}
+          changed={this.nameChangeHandler}
+        />
       </div>
     );
     btnClass = classes.Red;
   }
+
   return (
     <div className={classes.App}>
       <h1>Hello!</h1>
