@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classes from "./App.css";
 import People from "../components/People/People";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 const App = props => {
   // state = {
@@ -56,7 +57,6 @@ const App = props => {
   };
 
   let persons = null;
-  let btnClass = "";
 
   if (showPersonState.showPerson) {
     persons = (
@@ -68,15 +68,14 @@ const App = props => {
         />
       </div>
     );
-    btnClass = classes.Red;
   }
 
   return (
     <div className={classes.App}>
-      <h1>Hello!</h1>
-      <button className={btnClass} onClick={() => togglePersonHandler()}>
-        Change name
-      </button>
+      <Cockpit
+        btnClass={showPersonState.showPerson}
+        toggleClass={togglePersonHandler}
+      />
       {persons}
     </div>
   );
