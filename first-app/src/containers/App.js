@@ -64,7 +64,7 @@ const App = props => {
         <People
           people={personsState.persons}
           clicked={deletePersonHandler}
-          changed={this.nameChangeHandler}
+          changed={nameChangeHandler}
         />
       </div>
     );
